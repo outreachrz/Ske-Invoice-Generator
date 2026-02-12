@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { Invoice, InvoiceItem, Customer, SavedCustomer, SaleType, Product, BankDetails, CompanyDetails } from './types';
 import { MASTER_PRODUCTS as INITIAL_MASTER_PRODUCTS, DEFAULT_BANK_DETAILS, DEFAULT_TERMS, COMPANY_DETAILS } from './constants';
 import InvoicePreview from './components/InvoicePreview';
@@ -124,7 +125,7 @@ const App: React.FC = () => {
 
   const handleAddItem = (product?: Product) => {
     const newItem: InvoiceItem = {
-      id: Math.random().toString(36).substr(2, 9),
+      id: Math.random().toString(36).substring(2, 11),
       productId: product?.id || 'manual',
       description: product?.name || '',
       hsnCode: product?.hsnCode || '',
@@ -302,11 +303,12 @@ const App: React.FC = () => {
         onclone: (clonedDoc) => {
           const clonedEl = clonedDoc.getElementById('invoice-printable');
           if (clonedEl) {
-            clonedEl.style.boxShadow = 'none';
-            clonedEl.style.border = 'none';
+            // Use setProperty to avoid TypeScript errors with vendor prefixes and dynamic properties
+            clonedEl.style.setProperty('box-shadow', 'none');
+            clonedEl.style.setProperty('border', 'none');
             // Enhance rendering on the cloned element
-            clonedEl.style.webkitFontSmoothing = 'antialiased';
-            clonedEl.style.textRendering = 'optimizeLegibility';
+            clonedEl.style.setProperty('-webkit-font-smoothing', 'antialiased');
+            clonedEl.style.setProperty('text-rendering', 'optimizeLegibility');
           }
         }
       });
