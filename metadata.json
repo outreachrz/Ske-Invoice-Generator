@@ -1,5 +1,5 @@
 {
-  "name": "Final SKE Invoice Generator",
+  "name": "SKE Invoice Generator",
   "description": "A professional invoice application for Sri Krishnaa Enterprises, featuring product management, automatic GST calculations, and a printable tax invoice format matching their traditional Excel layout.",
   "requestFramePermissions": []
 }
