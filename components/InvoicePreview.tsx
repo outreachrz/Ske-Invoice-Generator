@@ -25,9 +25,8 @@ const InvoicePreview: React.FC<InvoicePreviewProps> = ({ invoice }) => {
       className="bg-white w-[210mm] min-h-[297mm] mx-auto text-[10px] font-sans border border-gray-300 shadow-xl print:border-none print:shadow-none print:m-0 print:w-full flex flex-col overflow-hidden"
       style={{ 
         height: '297mm', 
-        boxSizing: 'border-box',
-        WebkitFontSmoothing: 'antialiased',
-        textRendering: 'optimizeLegibility'
+        boxSizing: 'border-box'
+        // Rendering optimizations moved to index.html to avoid TS build errors
       }}
     >
       {/* Header Section */}

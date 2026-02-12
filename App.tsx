@@ -306,9 +306,7 @@ const App: React.FC = () => {
             // Use setProperty to avoid TypeScript errors with vendor prefixes and dynamic properties
             clonedEl.style.setProperty('box-shadow', 'none');
             clonedEl.style.setProperty('border', 'none');
-            // Enhance rendering on the cloned element
-            clonedEl.style.setProperty('-webkit-font-smoothing', 'antialiased');
-            clonedEl.style.setProperty('text-rendering', 'optimizeLegibility');
+            // Font smoothing and text rendering are now handled by global CSS in index.html
           }
         }
       });

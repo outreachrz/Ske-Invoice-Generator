@@ -14,6 +14,14 @@
             padding: 0;
             background-color: #f9fafb;
         }
+
+        /* Fixed: Non-standard CSS properties moved from JS to global stylesheet 
+           to resolve Property 'webkitFontSmoothing' does not exist errors during Vercel build */
+        #invoice-printable {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
     </style>
 <script type="importmap">
 {
